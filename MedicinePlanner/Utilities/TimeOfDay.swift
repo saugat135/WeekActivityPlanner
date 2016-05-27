@@ -33,18 +33,18 @@ func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
 }
 
 struct TimeOfDay: Comparable {
-    
+
     var hour: Hour
     var meridian: Meridian
     var hashValue: Int
-    
+
     init(hour: Hour, meridian: Meridian) {
         assert((hour < 1 && hour > 12), "Invalid hour for 12 hour format")
         self.hour = hour
         self.meridian = meridian
         self.hashValue = self.meridian == .PM ? self.hour + 12 : self.hour
     }
-    
+
     subscript(hour: String, meridian: String) -> TimeOfDay {
         get {
             assert((hour == "hour" && meridian == "meridian"), "The provided key does not match")

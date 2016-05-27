@@ -7,41 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD78697D1CF5C7D0007322F8 /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD78697C1CF5C7D0007322F8 /* ActivitySelectorView.xib */; };
-		CD78697F1CF5CD1D007322F8 /* ActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78697E1CF5CD1D007322F8 /* ActivitySelectorView.swift */; };
-		CD7869811CF6D1A0007322F8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7869801CF6D1A0007322F8 /* Activity.swift */; };
-		CD8FF4B41CF40AA3000650A3 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF4B31CF40AA3000650A3 /* TimeOfDay.swift */; };
-		CD8FF4B61CF40DB6000650A3 /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF4B51CF40DB6000650A3 /* ActivityTime.swift */; };
-		CD8FF4BA1CF42A25000650A3 /* FrequencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FF4B91CF42A25000650A3 /* FrequencyPicker.xib */; };
-		CD8FF4BC1CF42BB3000650A3 /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF4BB1CF42BB3000650A3 /* FrequencyPicker.swift */; };
-		CD8FF4BE1CF4361B000650A3 /* FrequencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF4BD1CF4361B000650A3 /* FrequencyPickerCell.swift */; };
-		CD8FF4C01CF45867000650A3 /* ActivityTimeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF4BF1CF45867000650A3 /* ActivityTimeTVC.swift */; };
+		CD5375741CF8010E003B225D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375651CF8010E003B225D /* Activity.swift */; };
+		CD5375751CF8010E003B225D /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375671CF8010E003B225D /* ActivityTime.swift */; };
+		CD5375761CF8010E003B225D /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375681CF8010E003B225D /* TimeOfDay.swift */; };
+		CD5375771CF8010E003B225D /* ActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */; };
+		CD5375781CF8010E003B225D /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */; };
+		CD5375791CF8010E003B225D /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756C1CF8010E003B225D /* FrequencyPicker.swift */; };
+		CD53757A1CF8010E003B225D /* FrequencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53756D1CF8010E003B225D /* FrequencyPicker.xib */; };
+		CD53757B1CF8010E003B225D /* FrequencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */; };
+		CD53757C1CF8010E003B225D /* ActivityPlannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375711CF8010E003B225D /* ActivityPlannerTVC.swift */; };
+		CD53757D1CF8010E003B225D /* ActivityPlannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375721CF8010E003B225D /* ActivityPlannerVC.swift */; };
+		CD5375811CF8013A003B225D /* ActivityTimeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375801CF8013A003B225D /* ActivityTimeTVC.swift */; };
 		CDACFC991CEEC59B0004C4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */; };
 		CDACFC9E1CEEC59B0004C4FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9C1CEEC59B0004C4FE /* Main.storyboard */; };
 		CDACFCA01CEEC59B0004C4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */; };
 		CDACFCA31CEEC59B0004C4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDACFCA11CEEC59B0004C4FE /* LaunchScreen.storyboard */; };
-		CDACFCAB1CEEC7780004C4FE /* ActivityPlannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACFCAA1CEEC7780004C4FE /* ActivityPlannerTVC.swift */; };
-		CDACFCAF1CEECB5E0004C4FE /* ActivityPlannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACFCAE1CEECB5E0004C4FE /* ActivityPlannerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD78697C1CF5C7D0007322F8 /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
-		CD78697E1CF5CD1D007322F8 /* ActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectorView.swift; sourceTree = "<group>"; };
-		CD7869801CF6D1A0007322F8 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		CD8FF4B31CF40AA3000650A3 /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
-		CD8FF4B51CF40DB6000650A3 /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
-		CD8FF4B91CF42A25000650A3 /* FrequencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyPicker.xib; sourceTree = "<group>"; };
-		CD8FF4BB1CF42BB3000650A3 /* FrequencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
-		CD8FF4BD1CF4361B000650A3 /* FrequencyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPickerCell.swift; sourceTree = "<group>"; };
-		CD8FF4BF1CF45867000650A3 /* ActivityTimeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTimeTVC.swift; sourceTree = "<group>"; };
+		CD5375651CF8010E003B225D /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		CD5375671CF8010E003B225D /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
+		CD5375681CF8010E003B225D /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
+		CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectorView.swift; sourceTree = "<group>"; };
+		CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
+		CD53756C1CF8010E003B225D /* FrequencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
+		CD53756D1CF8010E003B225D /* FrequencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyPicker.xib; sourceTree = "<group>"; };
+		CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPickerCell.swift; sourceTree = "<group>"; };
+		CD5375711CF8010E003B225D /* ActivityPlannerTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerTVC.swift; sourceTree = "<group>"; };
+		CD5375721CF8010E003B225D /* ActivityPlannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerVC.swift; sourceTree = "<group>"; };
+		CD5375801CF8013A003B225D /* ActivityTimeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTimeTVC.swift; sourceTree = "<group>"; };
 		CDACFC951CEEC59B0004C4FE /* MedicinePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDACFC9D1CEEC59B0004C4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDACFCA21CEEC59B0004C4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDACFCA41CEEC59B0004C4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDACFCAA1CEEC7780004C4FE /* ActivityPlannerTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityPlannerTVC.swift; path = Controllers/ActivityPlannerTVC.swift; sourceTree = "<group>"; };
-		CDACFCAE1CEECB5E0004C4FE /* ActivityPlannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityPlannerVC.swift; path = Controllers/ActivityPlannerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD5375641CF8010E003B225D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375651CF8010E003B225D /* Activity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD5375661CF8010E003B225D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375671CF8010E003B225D /* ActivityTime.swift */,
+				CD5375681CF8010E003B225D /* TimeOfDay.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CD5375691CF8010E003B225D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */,
+				CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */,
+				CD53756C1CF8010E003B225D /* FrequencyPicker.swift */,
+				CD53756D1CF8010E003B225D /* FrequencyPicker.xib */,
+				CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD53756F1CF8010E003B225D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD53757F1CF8013A003B225D /* ActivityTimeSelector */,
+				CD5375701CF8010E003B225D /* ActivityPlanner */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CD5375701CF8010E003B225D /* ActivityPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375711CF8010E003B225D /* ActivityPlannerTVC.swift */,
+				CD5375721CF8010E003B225D /* ActivityPlannerVC.swift */,
+			);
+			path = ActivityPlanner;
+			sourceTree = "<group>";
+		};
+		CD53757F1CF8013A003B225D /* ActivityTimeSelector */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375801CF8013A003B225D /* ActivityTimeTVC.swift */,
+			);
+			path = ActivityTimeSelector;
+			sourceTree = "<group>";
+		};
 		CDACFC8C1CEEC59B0004C4FE = {
 			isa = PBXGroup;
 			children = (
@@ -74,22 +129,15 @@
 		CDACFC971CEEC59B0004C4FE /* MedicinePlanner */ = {
 			isa = PBXGroup;
 			children = (
+				CD5375641CF8010E003B225D /* Model */,
+				CD5375661CF8010E003B225D /* Utilities */,
+				CD5375691CF8010E003B225D /* Views */,
+				CD53756F1CF8010E003B225D /* Controllers */,
 				CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */,
 				CDACFC9C1CEEC59B0004C4FE /* Main.storyboard */,
 				CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */,
 				CDACFCA11CEEC59B0004C4FE /* LaunchScreen.storyboard */,
 				CDACFCA41CEEC59B0004C4FE /* Info.plist */,
-				CDACFCAA1CEEC7780004C4FE /* ActivityPlannerTVC.swift */,
-				CDACFCAE1CEECB5E0004C4FE /* ActivityPlannerVC.swift */,
-				CD8FF4B31CF40AA3000650A3 /* TimeOfDay.swift */,
-				CD8FF4B51CF40DB6000650A3 /* ActivityTime.swift */,
-				CD8FF4B91CF42A25000650A3 /* FrequencyPicker.xib */,
-				CD8FF4BB1CF42BB3000650A3 /* FrequencyPicker.swift */,
-				CD8FF4BD1CF4361B000650A3 /* FrequencyPickerCell.swift */,
-				CD8FF4BF1CF45867000650A3 /* ActivityTimeTVC.swift */,
-				CD78697C1CF5C7D0007322F8 /* ActivitySelectorView.xib */,
-				CD78697E1CF5CD1D007322F8 /* ActivitySelectorView.swift */,
-				CD7869801CF6D1A0007322F8 /* Activity.swift */,
 			);
 			path = MedicinePlanner;
 			sourceTree = "<group>";
@@ -104,6 +152,7 @@
 				CDACFC911CEEC59B0004C4FE /* Sources */,
 				CDACFC921CEEC59B0004C4FE /* Frameworks */,
 				CDACFC931CEEC59B0004C4FE /* Resources */,
+				CD5375631CF7FDFB003B225D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -152,31 +201,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8FF4BA1CF42A25000650A3 /* FrequencyPicker.xib in Resources */,
 				CDACFCA31CEEC59B0004C4FE /* LaunchScreen.storyboard in Resources */,
 				CDACFCA01CEEC59B0004C4FE /* Assets.xcassets in Resources */,
+				CD5375781CF8010E003B225D /* ActivitySelectorView.xib in Resources */,
 				CDACFC9E1CEEC59B0004C4FE /* Main.storyboard in Resources */,
-				CD78697D1CF5C7D0007322F8 /* ActivitySelectorView.xib in Resources */,
+				CD53757A1CF8010E003B225D /* FrequencyPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD5375631CF7FDFB003B225D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDACFC911CEEC59B0004C4FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7869811CF6D1A0007322F8 /* Activity.swift in Sources */,
-				CD8FF4B41CF40AA3000650A3 /* TimeOfDay.swift in Sources */,
-				CDACFCAB1CEEC7780004C4FE /* ActivityPlannerTVC.swift in Sources */,
-				CD8FF4C01CF45867000650A3 /* ActivityTimeTVC.swift in Sources */,
+				CD5375761CF8010E003B225D /* TimeOfDay.swift in Sources */,
+				CD5375771CF8010E003B225D /* ActivitySelectorView.swift in Sources */,
+				CD5375741CF8010E003B225D /* Activity.swift in Sources */,
+				CD53757D1CF8010E003B225D /* ActivityPlannerVC.swift in Sources */,
 				CDACFC991CEEC59B0004C4FE /* AppDelegate.swift in Sources */,
-				CD78697F1CF5CD1D007322F8 /* ActivitySelectorView.swift in Sources */,
-				CDACFCAF1CEECB5E0004C4FE /* ActivityPlannerVC.swift in Sources */,
-				CD8FF4BE1CF4361B000650A3 /* FrequencyPickerCell.swift in Sources */,
-				CD8FF4BC1CF42BB3000650A3 /* FrequencyPicker.swift in Sources */,
-				CD8FF4B61CF40DB6000650A3 /* ActivityTime.swift in Sources */,
+				CD5375811CF8013A003B225D /* ActivityTimeTVC.swift in Sources */,
+				CD53757B1CF8010E003B225D /* FrequencyPickerCell.swift in Sources */,
+				CD53757C1CF8010E003B225D /* ActivityPlannerTVC.swift in Sources */,
+				CD5375791CF8010E003B225D /* FrequencyPicker.swift in Sources */,
+				CD5375751CF8010E003B225D /* ActivityTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MedicinePlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lftechnology.MedicinePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

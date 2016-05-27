@@ -5,7 +5,7 @@ typealias TimeInterval = (startTime: TimeOfDay, endTime: TimeOfDay)
 enum ActivityTime: Int {
 
     case earlyMorning = 1
-    case morning = 2 // Start of the day is assumed to be early morning by default
+    case morning = 2
     case lateMorning = 3
     case afternoon = 4
     case lateAfternoon = 5
@@ -15,11 +15,11 @@ enum ActivityTime: Int {
     case latenight = 9
     case midnight = 10
     case afterMidnight = 11
-    
+
     static func allActivityTimes() ->[ActivityTime] {
         return [
             .earlyMorning,
-            .morning, // Start of the day is assumed to be early morning by default
+            .morning,
             .lateMorning,
             .afternoon,
             .lateAfternoon,
@@ -31,7 +31,7 @@ enum ActivityTime: Int {
             .afterMidnight
         ]
     }
-    
+
     func stringValue() -> String {
         switch self {
         case .earlyMorning:
@@ -58,7 +58,7 @@ enum ActivityTime: Int {
             return "After Midnight"
         }
     }
-    
+
     func timeIntervalString() -> String {
         switch self {
         case .earlyMorning: return "6am - 8am"
@@ -72,12 +72,12 @@ enum ActivityTime: Int {
         case .latenight: return "10pm - 12am"
         case .midnight: return "12am - 2am"
         case .afterMidnight: return "2am - 6am"
-            
+
         }
     }
-    
+
     func timeInterval() -> TimeInterval {
-        
+
         switch self {
         case .earlyMorning:
             return 6 ^ .AM ... 8 ^ .AM
@@ -103,7 +103,7 @@ enum ActivityTime: Int {
             return 2 ^ .AM ... 6 ^ .AM
         }
     }
-    
+
     func sortIndex() -> Int {
         switch self {
         case .earlyMorning: return 0
@@ -119,5 +119,5 @@ enum ActivityTime: Int {
         case .afterMidnight: return 10
         }
     }
-    
+
 }

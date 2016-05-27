@@ -11,7 +11,7 @@ enum WeekDays: Int {
     case thursday = 5
     case friday = 6
     case saturday = 7
-    
+
     func stringValue() -> String {
         switch self {
         case .sunday: return "Sunday"
@@ -23,7 +23,7 @@ enum WeekDays: Int {
         case .saturday: return "Saturday"
         }
     }
-    
+
     func shorthandStringValue() -> String {
         switch self {
         case .sunday: return "S"
@@ -38,36 +38,32 @@ enum WeekDays: Int {
 }
 
 class ActivityPlannerVC: UIViewController {
-    
+
     var activityPlannerTVC: ActivityPlannerTVC!
 
     @IBOutlet var weekSelectorStkView: UIStackView!
     var weekViews: [ActivitySelectorView] = []
     var selectedWeekView: ActivitySelectorView = ActivitySelectorView()
     var currentDay: WeekDays = .sunday
-    
+
     // Model
     var activity: Activity!
     var occurrenceInWeek = OccurrenceInWeek(count: 7, repeatedValue: OccurrenceInDay(activityTimes: []))
-    
+
     required init?(coder aDecoder: NSCoder) {
         if self.activity == nil {
             self.activity = Activity(activityName: "Default", activityType: .medicine)
-            //            let occurrenceInDay = OccurrenceInDay(activityTimes: [.earlyMorning, .latenight])
-            //            let occurrencesInWeek = OccurrenceInWeek(sunday: occurrenceInDay, monday: occurrenceInDay, tuesday: occurrenceInDay, wednesday: occurrenceInDay, thursday: occurrenceInDay, friday: occurrenceInDay, saturday: occurrenceInDay)
-            //            self.activity = Activity(activityName: "Default Activity", activityOccurrences: occurrencesInWeek)
         }
         super.init(coder: aDecoder)
 
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         for i in 1...7 {
             let view = loadActivitySelectorView()
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapWeekSelectorView(_:)))
-            
+
             if self.activity.activityOccurrences[i - 1].frequency > 0 {
                 view.activityImageView.image = self.activity.activityType.activityImageSelected()
             } else {
@@ -75,48 +71,42 @@ class ActivityPlannerVC: UIViewController {
             }
 
             view.activityImageView.contentMode = .ScaleAspectFit
-            
+
             view.titleLabel.text = WeekDays(rawValue: i)!.shorthandStringValue()
-//            view.addGestureRecognizer(tapGestureRecognizer)
-            
+
             self.weekViews.append(view)
             self.weekSelectorStkView.addArrangedSubview(view)
-            
+
             view.delegate = self
-            
+
             self.weekSelectorStkView.alignment = .Fill
             self.weekSelectorStkView.distribution = .FillEqually
         }
         self.selectedWeekView = self.weekViews[0]
         self.selectedWeekView.titleLabel.backgroundColor = red
         self.selectedWeekView.titleLabel.textColor = UIColor.whiteColor()
-        
+
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ActivityPlannerTVCSegueID" {
-            self.activityPlannerTVC = segue.destinationViewController as! ActivityPlannerTVC
+            guard let vc = segue.destinationViewController as? ActivityPlannerTVC else { return }
+            self.activityPlannerTVC = vc
             self.activityPlannerTVC.delegate = self
             self.activityPlannerTVC.activityType = self.activity.activityType
         }
     }
-    
+
     @IBAction func done(sender: AnyObject) {
-        print(self.activity.activityOccurrences)
-        print("Frequency: \(self.activity.activityOccurrences.first?.frequency)")
+        //
     }
-    
+
     private func loadActivitySelectorView() -> ActivitySelectorView {
-        return UINib(nibName: "ActivitySelectorView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! ActivitySelectorView
+        guard let view = UINib(nibName: "ActivitySelectorView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as? ActivitySelectorView else { return ActivitySelectorView() }
+        return view
     }
-//    
-//    @objc private func tapWeekSelectorView(tapGestureRecognizer: UITapGestureRecognizer) {
-//        guard let tappedView = (tapGestureRecognizer.view as? ActivitySelectorView) else { return }
-//        tappedView.titleLabel.backgroundColor = UIColor.redColor()
-//        tappedView.titleLabel.textColor = UIColor.whiteColor()
-//        
-//    }
-    
+
+
     func didTapView(view: ActivitySelectorView) {
         guard view != self.selectedWeekView else { return }
         resetAllWeekViews()
@@ -128,7 +118,7 @@ class ActivityPlannerVC: UIViewController {
         self.activityPlannerTVC.currentFrequency = self.activityPlannerTVC.activityTimes.count
         self.activityPlannerTVC.tableView.reloadData()
     }
-    
+
     func resetAllWeekViews() {
         var i = 0
         for view in self.weekViews {
@@ -142,11 +132,11 @@ class ActivityPlannerVC: UIViewController {
             i += 1
         }
     }
-    
+
     func resetActivityPlannerTVC() {
         self.activityPlannerTVC.reset()
     }
-    
+
     func updateActivity() {
         self.occurrenceInWeek[self.currentDay.rawValue - 1] = OccurrenceInDay(activityTimes: self.activityPlannerTVC.activityTimes)
         self.activity.activityOccurrences = self.occurrenceInWeek
@@ -169,7 +159,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
         }
         self.updateActivity()
     }
-    
+
     func didDecreaseFrequency(frequency: Int) {
         var image = UIImage()
         if frequency == 0 {
@@ -180,8 +170,8 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
         self.selectedWeekView.activityImageView.image = image
         self.updateActivity()
     }
-    
+
     func didPickActivityTime(time: ActivityTime) {
-        
+
     }
 }

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MedicinePlanner
-//
-//  Created by Saugat Gautam on 5/20/16.
-//  Copyright © 2016 Saugat Gautam. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -43,4 +35,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
