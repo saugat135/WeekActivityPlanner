@@ -38,18 +38,19 @@ enum WeekDays: Int {
 }
 
 class ActivityPlannerVC: UIViewController {
-
-    var activityPlannerTVC: ActivityPlannerTVC!
-
+    
     @IBOutlet var weekSelectorStkView: UIStackView!
-    var weekViews: [ActivitySelectorView] = []
-    var selectedWeekView: ActivitySelectorView = ActivitySelectorView()
-    var currentDay: WeekDays = .sunday
+
+    private var activityPlannerTVC: ActivityPlannerTVC!
+    private var weekViews: [ActivitySelectorView] = []
+    private var selectedWeekView: ActivitySelectorView = ActivitySelectorView()
+    private var currentDay: WeekDays = .sunday
+    private var occurrenceInWeek = OccurrenceInWeek(count: 7, repeatedValue: OccurrenceInDay(activityTimes: []))
 
     // Model
     var activity: Activity!
-    var occurrenceInWeek = OccurrenceInWeek(count: 7, repeatedValue: OccurrenceInDay(activityTimes: []))
-
+    
+    // MARK: - Initializer
     required init?(coder aDecoder: NSCoder) {
         if self.activity == nil {
             self.activity = Activity(activityName: "Default", activityType: .medicine)
@@ -58,6 +59,7 @@ class ActivityPlannerVC: UIViewController {
 
     }
 
+    // MARK: - Overriden VC methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -96,17 +98,13 @@ class ActivityPlannerVC: UIViewController {
             self.activityPlannerTVC.activityType = self.activity.activityType
         }
     }
+    
+    // MARK: - Actions
 
     @IBAction func done(sender: AnyObject) {
         //
     }
-
-    private func loadActivitySelectorView() -> ActivitySelectorView {
-        guard let view = UINib(nibName: "ActivitySelectorView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as? ActivitySelectorView else { return ActivitySelectorView() }
-        return view
-    }
-
-
+    
     func didTapView(view: ActivitySelectorView) {
         guard view != self.selectedWeekView else { return }
         resetAllWeekViews()
@@ -118,8 +116,10 @@ class ActivityPlannerVC: UIViewController {
         self.activityPlannerTVC.currentFrequency = self.activityPlannerTVC.activityTimes.count
         self.activityPlannerTVC.tableView.reloadData()
     }
-
-    func resetAllWeekViews() {
+    
+    // MARK: - Worker methods
+    
+    private func resetAllWeekViews() {
         var i = 0
         for view in self.weekViews {
             view.titleLabel.textColor = blue
@@ -132,26 +132,34 @@ class ActivityPlannerVC: UIViewController {
             i += 1
         }
     }
-
-    func resetActivityPlannerTVC() {
+    
+    private func resetActivityPlannerTVC() {
         self.activityPlannerTVC.reset()
     }
-
-    func updateActivity() {
+    
+    private func updateActivity() {
         self.occurrenceInWeek[self.currentDay.rawValue - 1] = OccurrenceInDay(activityTimes: self.activityPlannerTVC.activityTimes)
         self.activity.activityOccurrences = self.occurrenceInWeek
+    }
+
+    private func loadActivitySelectorView() -> ActivitySelectorView {
+        guard let view = UINib(nibName: "ActivitySelectorView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as? ActivitySelectorView else { return ActivitySelectorView() }
+        return view
     }
 
 }
 
 extension ActivityPlannerVC: ActivitySelectorViewDelegate {
+    
     func didTap(view: ActivitySelectorView) {
         self.resetActivityPlannerTVC()
         self.didTapView(view)
     }
+    
 }
 
 extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
+    
     func didIncreaseFrequency(frequency: Int) {
         let image = self.activity.activityType.activityImageSelected()
         if self.selectedWeekView.activityImageView.image != image {
@@ -172,6 +180,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
     }
 
     func didPickActivityTime(time: ActivityTime) {
-
+        // TODO: - Handle the case when the time is picked from ActivityTimeTVC if required
     }
+    
 }

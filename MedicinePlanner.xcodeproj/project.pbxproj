@@ -10,14 +10,14 @@
 		CD5375741CF8010E003B225D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375651CF8010E003B225D /* Activity.swift */; };
 		CD5375751CF8010E003B225D /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375671CF8010E003B225D /* ActivityTime.swift */; };
 		CD5375761CF8010E003B225D /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375681CF8010E003B225D /* TimeOfDay.swift */; };
-		CD5375771CF8010E003B225D /* ActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */; };
-		CD5375781CF8010E003B225D /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */; };
-		CD5375791CF8010E003B225D /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756C1CF8010E003B225D /* FrequencyPicker.swift */; };
-		CD53757A1CF8010E003B225D /* FrequencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53756D1CF8010E003B225D /* FrequencyPicker.xib */; };
-		CD53757B1CF8010E003B225D /* FrequencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */; };
 		CD53757C1CF8010E003B225D /* ActivityPlannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375711CF8010E003B225D /* ActivityPlannerTVC.swift */; };
 		CD53757D1CF8010E003B225D /* ActivityPlannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375721CF8010E003B225D /* ActivityPlannerVC.swift */; };
 		CD5375811CF8013A003B225D /* ActivityTimeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375801CF8013A003B225D /* ActivityTimeTVC.swift */; };
+		CD53758A1CF803D4003B225D /* FrequencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375831CF803D4003B225D /* FrequencyPickerCell.swift */; };
+		CD53758B1CF803D4003B225D /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375851CF803D4003B225D /* FrequencyPicker.swift */; };
+		CD53758C1CF803D4003B225D /* FrequencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5375861CF803D4003B225D /* FrequencyPicker.xib */; };
+		CD53758D1CF803D4003B225D /* ActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375881CF803D4003B225D /* ActivitySelectorView.swift */; };
+		CD53758E1CF803D4003B225D /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5375891CF803D4003B225D /* ActivitySelectorView.xib */; };
 		CDACFC991CEEC59B0004C4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */; };
 		CDACFC9E1CEEC59B0004C4FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9C1CEEC59B0004C4FE /* Main.storyboard */; };
 		CDACFCA01CEEC59B0004C4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */; };
@@ -28,14 +28,14 @@
 		CD5375651CF8010E003B225D /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CD5375671CF8010E003B225D /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
 		CD5375681CF8010E003B225D /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
-		CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectorView.swift; sourceTree = "<group>"; };
-		CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
-		CD53756C1CF8010E003B225D /* FrequencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
-		CD53756D1CF8010E003B225D /* FrequencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyPicker.xib; sourceTree = "<group>"; };
-		CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPickerCell.swift; sourceTree = "<group>"; };
 		CD5375711CF8010E003B225D /* ActivityPlannerTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerTVC.swift; sourceTree = "<group>"; };
 		CD5375721CF8010E003B225D /* ActivityPlannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerVC.swift; sourceTree = "<group>"; };
 		CD5375801CF8013A003B225D /* ActivityTimeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTimeTVC.swift; sourceTree = "<group>"; };
+		CD5375831CF803D4003B225D /* FrequencyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPickerCell.swift; sourceTree = "<group>"; };
+		CD5375851CF803D4003B225D /* FrequencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
+		CD5375861CF803D4003B225D /* FrequencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyPicker.xib; sourceTree = "<group>"; };
+		CD5375881CF803D4003B225D /* ActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectorView.swift; sourceTree = "<group>"; };
+		CD5375891CF803D4003B225D /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
 		CDACFC951CEEC59B0004C4FE /* MedicinePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDACFC9D1CEEC59B0004C4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,11 +75,8 @@
 		CD5375691CF8010E003B225D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD53756A1CF8010E003B225D /* ActivitySelectorView.swift */,
-				CD53756B1CF8010E003B225D /* ActivitySelectorView.xib */,
-				CD53756C1CF8010E003B225D /* FrequencyPicker.swift */,
-				CD53756D1CF8010E003B225D /* FrequencyPicker.xib */,
-				CD53756E1CF8010E003B225D /* FrequencyPickerCell.swift */,
+				CD5375821CF803D4003B225D /* FrequencyPicker */,
+				CD5375871CF803D4003B225D /* ActivitySelector */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +107,33 @@
 			path = ActivityTimeSelector;
 			sourceTree = "<group>";
 		};
+		CD5375821CF803D4003B225D /* FrequencyPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375831CF803D4003B225D /* FrequencyPickerCell.swift */,
+				CD5375841CF803D4003B225D /* FrequencyPickerView */,
+			);
+			path = FrequencyPicker;
+			sourceTree = "<group>";
+		};
+		CD5375841CF803D4003B225D /* FrequencyPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375851CF803D4003B225D /* FrequencyPicker.swift */,
+				CD5375861CF803D4003B225D /* FrequencyPicker.xib */,
+			);
+			path = FrequencyPickerView;
+			sourceTree = "<group>";
+		};
+		CD5375871CF803D4003B225D /* ActivitySelector */ = {
+			isa = PBXGroup;
+			children = (
+				CD5375881CF803D4003B225D /* ActivitySelectorView.swift */,
+				CD5375891CF803D4003B225D /* ActivitySelectorView.xib */,
+			);
+			path = ActivitySelector;
+			sourceTree = "<group>";
+		};
 		CDACFC8C1CEEC59B0004C4FE = {
 			isa = PBXGroup;
 			children = (
@@ -129,10 +153,10 @@
 		CDACFC971CEEC59B0004C4FE /* MedicinePlanner */ = {
 			isa = PBXGroup;
 			children = (
-				CD5375641CF8010E003B225D /* Model */,
-				CD5375661CF8010E003B225D /* Utilities */,
-				CD5375691CF8010E003B225D /* Views */,
 				CD53756F1CF8010E003B225D /* Controllers */,
+				CD5375641CF8010E003B225D /* Model */,
+				CD5375691CF8010E003B225D /* Views */,
+				CD5375661CF8010E003B225D /* Utilities */,
 				CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */,
 				CDACFC9C1CEEC59B0004C4FE /* Main.storyboard */,
 				CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */,
@@ -201,11 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD53758C1CF803D4003B225D /* FrequencyPicker.xib in Resources */,
 				CDACFCA31CEEC59B0004C4FE /* LaunchScreen.storyboard in Resources */,
 				CDACFCA01CEEC59B0004C4FE /* Assets.xcassets in Resources */,
-				CD5375781CF8010E003B225D /* ActivitySelectorView.xib in Resources */,
 				CDACFC9E1CEEC59B0004C4FE /* Main.storyboard in Resources */,
-				CD53757A1CF8010E003B225D /* FrequencyPicker.xib in Resources */,
+				CD53758E1CF803D4003B225D /* ActivitySelectorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "exit\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -234,14 +258,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5375761CF8010E003B225D /* TimeOfDay.swift in Sources */,
-				CD5375771CF8010E003B225D /* ActivitySelectorView.swift in Sources */,
 				CD5375741CF8010E003B225D /* Activity.swift in Sources */,
 				CD53757D1CF8010E003B225D /* ActivityPlannerVC.swift in Sources */,
 				CDACFC991CEEC59B0004C4FE /* AppDelegate.swift in Sources */,
+				CD53758B1CF803D4003B225D /* FrequencyPicker.swift in Sources */,
+				CD53758A1CF803D4003B225D /* FrequencyPickerCell.swift in Sources */,
+				CD53758D1CF803D4003B225D /* ActivitySelectorView.swift in Sources */,
 				CD5375811CF8013A003B225D /* ActivityTimeTVC.swift in Sources */,
-				CD53757B1CF8010E003B225D /* FrequencyPickerCell.swift in Sources */,
 				CD53757C1CF8010E003B225D /* ActivityPlannerTVC.swift in Sources */,
-				CD5375791CF8010E003B225D /* FrequencyPicker.swift in Sources */,
 				CD5375751CF8010E003B225D /* ActivityTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
