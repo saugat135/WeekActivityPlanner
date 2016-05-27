@@ -145,12 +145,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p65-sh-3Hm">
-                                <rect key="frame" x="0.0" y="72" width="600" height="47"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8t-wQ-IMe">
+                                <rect key="frame" x="20" y="72" width="560" height="47"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="oRD-G2-Ef8"/>
+                                    <constraint firstAttribute="height" constant="47" id="4ud-sd-tQg"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6z-K0-BDK">
                                 <rect key="frame" x="0.0" y="127" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.87058823529411766" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,30 +171,24 @@
                             <constraint firstItem="q6z-K0-BDK" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leading" id="1dG-Mt-pbM"/>
                             <constraint firstItem="NxB-Z5-Tmo" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leading" id="AVc-7c-38q"/>
                             <constraint firstItem="q6z-K0-BDK" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leadingMargin" id="IdD-Me-e18"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p65-sh-3Hm" secondAttribute="trailing" id="KYg-gG-Dou"/>
-                            <constraint firstItem="p65-sh-3Hm" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leadingMargin" id="MnZ-KQ-AJt"/>
                             <constraint firstItem="NxB-Z5-Tmo" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leadingMargin" id="NoT-Xd-cZo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e8t-wQ-IMe" secondAttribute="trailing" id="O6y-Gz-uv1"/>
                             <constraint firstItem="myp-CX-KVu" firstAttribute="top" secondItem="NxB-Z5-Tmo" secondAttribute="bottom" id="Pfi-Ud-fqQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q6z-K0-BDK" secondAttribute="trailing" id="UMf-xe-JBp"/>
                             <constraint firstAttribute="trailing" secondItem="NxB-Z5-Tmo" secondAttribute="trailing" id="YDs-gL-qBH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NxB-Z5-Tmo" secondAttribute="trailing" id="a2V-QD-SLu"/>
-                            <constraint firstItem="q6z-K0-BDK" firstAttribute="top" secondItem="p65-sh-3Hm" secondAttribute="bottom" constant="8" id="eL9-DE-6yf"/>
-                            <constraint firstItem="NxB-Z5-Tmo" firstAttribute="top" secondItem="p65-sh-3Hm" secondAttribute="bottom" constant="8" id="kly-VN-Cym"/>
+                            <constraint firstItem="e8t-wQ-IMe" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leadingMargin" id="iNY-VN-41E"/>
                             <constraint firstItem="NxB-Z5-Tmo" firstAttribute="top" secondItem="q6z-K0-BDK" secondAttribute="bottom" id="mum-8m-DBe"/>
-                            <constraint firstItem="p65-sh-3Hm" firstAttribute="leading" secondItem="fGy-fd-O6i" secondAttribute="leading" id="qRq-xJ-SgG"/>
-                            <constraint firstAttribute="trailing" secondItem="p65-sh-3Hm" secondAttribute="trailing" id="xgY-dZ-73R"/>
-                            <constraint firstItem="p65-sh-3Hm" firstAttribute="top" secondItem="Ypt-k6-JMe" secondAttribute="bottom" constant="8" id="zjf-fQ-myd"/>
+                            <constraint firstItem="q6z-K0-BDK" firstAttribute="top" secondItem="e8t-wQ-IMe" secondAttribute="bottom" constant="8" id="mxu-9R-xNC"/>
+                            <constraint firstItem="e8t-wQ-IMe" firstAttribute="top" secondItem="Ypt-k6-JMe" secondAttribute="bottom" constant="8" id="q5x-1R-Inv"/>
                             <constraint firstAttribute="trailing" secondItem="q6z-K0-BDK" secondAttribute="trailing" id="zjg-Kf-9fN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="KYg-gG-Dou"/>
-                                <exclude reference="MnZ-KQ-AJt"/>
                                 <exclude reference="IdD-Me-e18"/>
                                 <exclude reference="UMf-xe-JBp"/>
                                 <exclude reference="NoT-Xd-cZo"/>
                                 <exclude reference="a2V-QD-SLu"/>
-                                <exclude reference="kly-VN-Cym"/>
                             </mask>
                         </variation>
                     </view>
@@ -206,7 +201,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="weekSelectorStkView" destination="p65-sh-3Hm" id="Rp6-8k-4Rb"/>
+                        <outlet property="weekSelectorView" destination="e8t-wQ-IMe" id="WYx-0N-cEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qr1-6S-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>

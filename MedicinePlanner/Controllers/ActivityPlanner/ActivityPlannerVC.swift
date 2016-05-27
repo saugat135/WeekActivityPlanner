@@ -39,14 +39,14 @@ enum WeekDays: Int {
 
 class ActivityPlannerVC: UIViewController {
     
-    @IBOutlet var weekSelectorStkView: UIStackView!
-
+    @IBOutlet var weekSelectorView: UIView!
+    
     private var activityPlannerTVC: ActivityPlannerTVC!
     private var weekViews: [ActivitySelectorView] = []
     private var selectedWeekView: ActivitySelectorView = ActivitySelectorView()
     private var currentDay: WeekDays = .sunday
     private var occurrenceInWeek = OccurrenceInWeek(count: 7, repeatedValue: OccurrenceInDay(activityTimes: []))
-
+    
     // Model
     var activity: Activity!
     
@@ -58,35 +58,18 @@ class ActivityPlannerVC: UIViewController {
         super.init(coder: aDecoder)
 
     }
-
+    var selectorView = WeekActivitySelectorView()
     // MARK: - Overriden VC methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        for i in 1...7 {
-            let view = loadActivitySelectorView()
-
-            if self.activity.activityOccurrences[i - 1].frequency > 0 {
-                view.activityImageView.image = self.activity.activityType.activityImageSelected()
-            } else {
-                view.activityImageView.image = self.activity.activityType.activityImageNormal()
-            }
-
-            view.activityImageView.contentMode = .ScaleAspectFit
-
-            view.titleLabel.text = WeekDays(rawValue: i)!.shorthandStringValue()
-
-            self.weekViews.append(view)
-            self.weekSelectorStkView.addArrangedSubview(view)
-
-            view.delegate = self
-
-            self.weekSelectorStkView.alignment = .Fill
-            self.weekSelectorStkView.distribution = .FillEqually
-        }
-        self.selectedWeekView = self.weekViews[0]
-        self.selectedWeekView.titleLabel.backgroundColor = red
-        self.selectedWeekView.titleLabel.textColor = UIColor.whiteColor()
+        selectorView = UINib(nibName: "WeekActivitySelector", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! WeekActivitySelectorView
+        selectorView.frame = weekSelectorView.bounds
+        selectorView.delegate = self
+        self.weekSelectorView.addSubview(selectorView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        selectorView.frame = weekSelectorView.bounds
 
     }
 
@@ -108,11 +91,11 @@ class ActivityPlannerVC: UIViewController {
     func didTapView(view: ActivitySelectorView) {
         guard view != self.selectedWeekView else { return }
         resetAllWeekViews()
-        self.currentDay = WeekDays(rawValue: self.weekViews.indexOf(view)! + 1)!
+        self.currentDay = WeekDays(rawValue: self.selectorView.selectedSegment + 1)!
         view.titleLabel.backgroundColor = red
         view.titleLabel.textColor = UIColor.whiteColor()
         self.selectedWeekView = view
-        self.activityPlannerTVC.activityTimes = self.activity.activityOccurrences[self.weekViews.indexOf(view)!].activityTimes
+        self.activityPlannerTVC.activityTimes = self.activity.activityOccurrences[self.selectorView.selectedSegment].activityTimes
         self.activityPlannerTVC.currentFrequency = self.activityPlannerTVC.activityTimes.count
         self.activityPlannerTVC.tableView.reloadData()
     }
@@ -149,7 +132,7 @@ class ActivityPlannerVC: UIViewController {
 
 }
 
-extension ActivityPlannerVC: ActivitySelectorViewDelegate {
+extension ActivityPlannerVC: WeekActivitySelectorViewDelegate {
     
     func didTap(view: ActivitySelectorView) {
         self.resetActivityPlannerTVC()
@@ -162,9 +145,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
     
     func didIncreaseFrequency(frequency: Int) {
         let image = self.activity.activityType.activityImageSelected()
-        if self.selectedWeekView.activityImageView.image != image {
-            self.selectedWeekView.activityImageView.image = image
-        }
+        self.selectorView.weekViews[self.selectorView.selectedSegment].activityImageView.image = image
         self.updateActivity()
     }
 
@@ -175,7 +156,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
         } else {
             image = self.activity.activityType.activityImageSelected()
         }
-        self.selectedWeekView.activityImageView.image = image
+        self.selectorView.weekViews[self.selectorView.selectedSegment].activityImageView.image = image
         self.updateActivity()
     }
 
