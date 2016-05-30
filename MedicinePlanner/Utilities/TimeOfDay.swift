@@ -1,6 +1,6 @@
 import Foundation
 
-typealias Hour = Int
+//typealias Hour = Int
 
 enum Meridian: String {
     case AM = "am"
@@ -11,15 +11,17 @@ func ... (startTime: TimeOfDay, endTime: TimeOfDay) -> [TimeOfDay] {
     var start = startTime
     var end = endTime
     
-    if start.meridian == .PM {
-        if start.hour > 12 {
-            start.hour = start.hour + 12
-        }
-    }
-    if end.meridian == .PM {
-        end.hour = end.hour + 12
-    }
-    let greaterTime = max(start, end)
+    // TODO: Return the range of Times
+    
+//    if start.meridian == .PM {
+//        if start.hour.rawValue > 12 {
+//            start.hour = start.hour.rawValue + 12
+//        }
+//    }
+//    if end.meridian == .PM {
+//        end.hour = end.hour + 12
+//    }
+//    let greaterTime = max(start, end)
     
     
     
@@ -36,7 +38,8 @@ func -- (startTime: TimeOfDay, endTime: TimeOfDay) -> (TimeOfDay, TimeOfDay) {
 
 infix operator ^ { associativity left precedence 140 }
 
-func ^ (hour: Hour, meridian: Meridian) -> TimeOfDay {
+func ^ (hour: Int, meridian: Meridian) -> TimeOfDay! {
+    guard let hour = Hour(rawValue: hour) else { return nil }
     return TimeOfDay(hour: hour, meridian: meridian)
 }
 
@@ -53,6 +56,22 @@ func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
     return lhs.hashValue > rhs.hashValue
 }
 
+enum Hour: Int {
+    case one = 1
+    case two
+    case three
+    case four
+    case five
+    case six
+    case seven
+    case eight
+    case nine
+    case ten
+    case eleven
+    case twelve
+    
+}
+
 struct TimeOfDay: Comparable {
 
     var hour: Hour!
@@ -61,47 +80,44 @@ struct TimeOfDay: Comparable {
 
     init(hour: Hour, meridian: Meridian) {
         
-        var isInvalidHour = (hour < 1 || hour > 12)
-        assert(isInvalidHour, "Invalid hour for 12 hour format")
-        
+        let isInvalidHour = (hour.rawValue < 1 || hour.rawValue > 12)
         if isInvalidHour {
-            self.hour = nil
-            self.meridian = nil
-            self.hashValue = -1
-        } else {
-            self.hour = hour
-            self.meridian = meridian
-            
-            switch meridian {
-            case .AM:
-                if hour != 12 {
-                    self.hashValue = hour + 12
-                } else {
-                    self.hashValue = hour
-                }
-            case .PM:
-                if hour == 12 {
-                    self.hashValue = 0
-                } else {
-                    self.hashValue = hour
-                }
-            }
+            fatalError("Invalid hour for 12 hour format")
         }
-    }
+
+        self.hour = hour
+        self.meridian = meridian
     
-    func convertTo24Hour() -> Hour {
-        switch self.meridian! {
+        switch meridian {
         case .AM:
-            if hour != 12 {
-                return hour + 12
+            if hour.rawValue != 12 {
+                self.hashValue = hour.rawValue + 12
             } else {
-                return hour
+                self.hashValue = hour.rawValue
             }
         case .PM:
-            if hour == 12 {
+            if hour.rawValue == 12 {
+                self.hashValue = 0
+            } else {
+                self.hashValue = hour.rawValue
+            }
+        }
+        
+    }
+    
+    func convertTo24Hour() -> Int {
+        switch self.meridian! {
+        case .AM:
+            if hour.rawValue != 12 {
+                return hour.rawValue + 12
+            } else {
+                return hour.rawValue
+            }
+        case .PM:
+            if hour.rawValue == 12 {
                 return 0
             } else {
-                return hour
+                return hour.rawValue
             }
         }
         
@@ -109,7 +125,9 @@ struct TimeOfDay: Comparable {
 
     subscript(hour: String, meridian: String) -> TimeOfDay {
         get {
-            assert((hour == "hour" && meridian == "meridian"), "The provided key does not match")
+            if (hour != "hour" || meridian != "meridian") {
+                fatalError("The provided key does not match")
+            }
             return TimeOfDay(hour: self.hour, meridian: self.meridian)
         }
         set {
