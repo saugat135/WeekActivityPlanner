@@ -90,18 +90,18 @@ struct TimeOfDay: Comparable {
     }
     
     func convertTo24Hour() -> Hour {
-        switch self.meridian {
+        switch self.meridian! {
         case .AM:
             if hour != 12 {
-                self.hashValue = hour + 12
+                return hour + 12
             } else {
-                self.hashValue = hour
+                return hour
             }
         case .PM:
             if hour == 12 {
-                self.hashValue = 0
+                return 0
             } else {
-                self.hashValue = hour
+                return hour
             }
         }
         

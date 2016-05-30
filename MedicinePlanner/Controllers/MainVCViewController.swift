@@ -25,7 +25,8 @@ class MainVCViewController: UIViewController {
         let activity = Activity(activityName: "Medicine", activityType: .medicine)
         activity.activityOccurrences = OccurrenceInWeek(count: 7, repeatedValue: OccurrenceInDay(activityTimes: [.earlyMorning]))
         activityPlannerVC.activity = activity
-        self.presentViewController(activityPlannerVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(activityPlannerVC, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
