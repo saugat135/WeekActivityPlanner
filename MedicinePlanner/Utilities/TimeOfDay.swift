@@ -74,39 +74,20 @@ enum Hour: Int {
 
 struct TimeOfDay: Comparable {
 
-    var hour: Hour!
-    var meridian: Meridian!
-    var hashValue: Int
+    var hour: Hour
+    var meridian: Meridian
+    var hashValue: Int = 0
 
     init(hour: Hour, meridian: Meridian) {
         
-        let isInvalidHour = (hour.rawValue < 1 || hour.rawValue > 12)
-        if isInvalidHour {
-            fatalError("Invalid hour for 12 hour format")
-        }
-
         self.hour = hour
         self.meridian = meridian
-    
-        switch meridian {
-        case .AM:
-            if hour.rawValue != 12 {
-                self.hashValue = hour.rawValue + 12
-            } else {
-                self.hashValue = hour.rawValue
-            }
-        case .PM:
-            if hour.rawValue == 12 {
-                self.hashValue = 0
-            } else {
-                self.hashValue = hour.rawValue
-            }
-        }
         
+        self.hashValue = self.convertTo24Hour()
     }
     
     func convertTo24Hour() -> Int {
-        switch self.meridian! {
+        switch self.meridian {
         case .AM:
             if hour.rawValue != 12 {
                 return hour.rawValue + 12
