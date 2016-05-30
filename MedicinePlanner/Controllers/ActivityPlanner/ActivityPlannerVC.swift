@@ -39,7 +39,7 @@ enum WeekDays: Int {
 
 class ActivityPlannerVC: UIViewController {
     
-    @IBOutlet var weekSelectorView: UIView!
+    @IBOutlet var weekSelectorViewPlaceholder: UIView!
     
     private var activityPlannerTVC: ActivityPlannerTVC!
     private var weekViews: [ActivitySelectorView] = []
@@ -52,24 +52,26 @@ class ActivityPlannerVC: UIViewController {
     
     // MARK: - Initializer
     required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
         if self.activity == nil {
             self.activity = Activity(activityName: "Default", activityType: .medicine)
         }
-        super.init(coder: aDecoder)
 
     }
-    var selectorView = WeekActivitySelectorView()
+    
+    var weekSelectorView = WeekActivitySelectorView()
     // MARK: - Overriden VC methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectorView = UINib(nibName: "WeekActivitySelector", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! WeekActivitySelectorView
-        selectorView.frame = weekSelectorView.bounds
-        selectorView.delegate = self
-        self.weekSelectorView.addSubview(selectorView)
+        weekSelectorView = UINib(nibName: "WeekActivitySelector", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! WeekActivitySelectorView
+        weekSelectorView.frame = weekSelectorViewPlaceholder.bounds
+        weekSelectorView.delegate = self
+        self.weekSelectorViewPlaceholder.addSubview(weekSelectorView)
     }
     
     override func viewDidLayoutSubviews() {
-        selectorView.frame = weekSelectorView.bounds
+        weekSelectorView.frame = weekSelectorViewPlaceholder.bounds
 
     }
 
@@ -79,6 +81,7 @@ class ActivityPlannerVC: UIViewController {
             self.activityPlannerTVC = vc
             self.activityPlannerTVC.delegate = self
             self.activityPlannerTVC.activityType = self.activity.activityType
+            self.activityPlannerTVC.activityTimes = self.activity.activityOccurrences[0].activityTimes
         }
     }
     
@@ -90,12 +93,12 @@ class ActivityPlannerVC: UIViewController {
     
     func didTapView(view: ActivitySelectorView) {
         guard view != self.selectedWeekView else { return }
-        resetAllWeekViews()
-        self.currentDay = WeekDays(rawValue: self.selectorView.selectedSegment + 1)!
+//        resetAllWeekViews()
+        self.currentDay = WeekDays(rawValue: self.weekSelectorView.selectedSegment + 1)!
         view.titleLabel.backgroundColor = red
         view.titleLabel.textColor = UIColor.whiteColor()
         self.selectedWeekView = view
-        self.activityPlannerTVC.activityTimes = self.activity.activityOccurrences[self.selectorView.selectedSegment].activityTimes
+        self.activityPlannerTVC.activityTimes = self.activity.activityOccurrences[self.weekSelectorView.selectedSegment].activityTimes
         self.activityPlannerTVC.currentFrequency = self.activityPlannerTVC.activityTimes.count
         self.activityPlannerTVC.tableView.reloadData()
     }
@@ -145,7 +148,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
     
     func didIncreaseFrequency(frequency: Int) {
         let image = self.activity.activityType.activityImageSelected()
-        self.selectorView.weekViews[self.selectorView.selectedSegment].activityImageView.image = image
+        self.weekSelectorView.weekViews[self.weekSelectorView.selectedSegment].activityImageView.image = image
         self.updateActivity()
     }
 
@@ -156,7 +159,7 @@ extension ActivityPlannerVC: ActivityPlannerTVCDelegate {
         } else {
             image = self.activity.activityType.activityImageSelected()
         }
-        self.selectorView.weekViews[self.selectorView.selectedSegment].activityImageView.image = image
+        self.weekSelectorView.weekViews[self.weekSelectorView.selectedSegment].activityImageView.image = image
         self.updateActivity()
     }
 

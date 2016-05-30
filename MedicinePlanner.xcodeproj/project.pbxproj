@@ -20,6 +20,7 @@
 		CD53758E1CF803D4003B225D /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5375891CF803D4003B225D /* ActivitySelectorView.xib */; };
 		CD5375901CF80E35003B225D /* WeekActivitySelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53758F1CF80E35003B225D /* WeekActivitySelector.xib */; };
 		CD5375921CF80EE1003B225D /* WeekActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375911CF80EE1003B225D /* WeekActivitySelectorView.swift */; };
+		CD5375B21CF86641003B225D /* MainVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5375B11CF86641003B225D /* MainVCViewController.swift */; };
 		CDACFC991CEEC59B0004C4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */; };
 		CDACFC9E1CEEC59B0004C4FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9C1CEEC59B0004C4FE /* Main.storyboard */; };
 		CDACFCA01CEEC59B0004C4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDACFC9F1CEEC59B0004C4FE /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		CD5375891CF803D4003B225D /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
 		CD53758F1CF80E35003B225D /* WeekActivitySelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekActivitySelector.xib; sourceTree = "<group>"; };
 		CD5375911CF80EE1003B225D /* WeekActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekActivitySelectorView.swift; sourceTree = "<group>"; };
+		CD5375B11CF86641003B225D /* MainVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCViewController.swift; sourceTree = "<group>"; };
 		CDACFC951CEEC59B0004C4FE /* MedicinePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDACFC981CEEC59B0004C4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDACFC9D1CEEC59B0004C4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				CD53757F1CF8013A003B225D /* ActivityTimeSelector */,
 				CD5375701CF8010E003B225D /* ActivityPlanner */,
+				CD5375B11CF86641003B225D /* MainVCViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				CD53758D1CF803D4003B225D /* ActivitySelectorView.swift in Sources */,
 				CD5375811CF8013A003B225D /* ActivityTimeTVC.swift in Sources */,
 				CD53757C1CF8010E003B225D /* ActivityPlannerTVC.swift in Sources */,
+				CD5375B21CF86641003B225D /* MainVCViewController.swift in Sources */,
 				CD5375751CF8010E003B225D /* ActivityTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

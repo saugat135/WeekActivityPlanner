@@ -7,9 +7,30 @@ enum Meridian: String {
     case PM = "pm"
 }
 
-infix operator ... { associativity left }
+func ... (startTime: TimeOfDay, endTime: TimeOfDay) -> [TimeOfDay] {
+    var start = startTime
+    var end = endTime
+    
+    if start.meridian == .PM {
+        if start.hour > 12 {
+            start.hour = start.hour + 12
+        }
+    }
+    if end.meridian == .PM {
+        end.hour = end.hour + 12
+    }
+    let greaterTime = max(start, end)
+    
+    
+    
+    
+    
+    return [startTime, endTime]
+}
 
-func ... (startTime: TimeOfDay, endTime: TimeOfDay) -> (TimeOfDay, TimeOfDay) {
+infix operator -- { associativity left precedence 139 }
+
+func -- (startTime: TimeOfDay, endTime: TimeOfDay) -> (TimeOfDay, TimeOfDay) {
     return (startTime, endTime)
 }
 
@@ -34,15 +55,56 @@ func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
 
 struct TimeOfDay: Comparable {
 
-    var hour: Hour
-    var meridian: Meridian
+    var hour: Hour!
+    var meridian: Meridian!
     var hashValue: Int
 
     init(hour: Hour, meridian: Meridian) {
-        assert((hour < 1 && hour > 12), "Invalid hour for 12 hour format")
-        self.hour = hour
-        self.meridian = meridian
-        self.hashValue = self.meridian == .PM ? self.hour + 12 : self.hour
+        
+        var isInvalidHour = (hour < 1 || hour > 12)
+        assert(isInvalidHour, "Invalid hour for 12 hour format")
+        
+        if isInvalidHour {
+            self.hour = nil
+            self.meridian = nil
+            self.hashValue = -1
+        } else {
+            self.hour = hour
+            self.meridian = meridian
+            
+            switch meridian {
+            case .AM:
+                if hour != 12 {
+                    self.hashValue = hour + 12
+                } else {
+                    self.hashValue = hour
+                }
+            case .PM:
+                if hour == 12 {
+                    self.hashValue = 0
+                } else {
+                    self.hashValue = hour
+                }
+            }
+        }
+    }
+    
+    func convertTo24Hour() -> Hour {
+        switch self.meridian {
+        case .AM:
+            if hour != 12 {
+                self.hashValue = hour + 12
+            } else {
+                self.hashValue = hour
+            }
+        case .PM:
+            if hour == 12 {
+                self.hashValue = 0
+            } else {
+                self.hashValue = hour
+            }
+        }
+        
     }
 
     subscript(hour: String, meridian: String) -> TimeOfDay {

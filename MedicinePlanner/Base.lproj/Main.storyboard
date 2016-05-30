@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nrq-sg-VLB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Pd-Of-LMz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -133,10 +133,28 @@
             </objects>
             <point key="canvasLocation" x="3353" y="683"/>
         </scene>
+        <!--MainVC View Controller-->
+        <scene sceneID="bDu-iS-4zi">
+            <objects>
+                <viewController id="3Pd-Of-LMz" customClass="MainVCViewController" customModule="MedicinePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k4C-Fl-Bpb"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7p-hi-kT2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vg5-u3-IgB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LV2-ul-R8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="-277"/>
+        </scene>
         <!--Custom Dosage-->
         <scene sceneID="zK9-p5-e3N">
             <objects>
-                <viewController id="EaG-E7-1iX" customClass="ActivityPlannerVC" customModule="MedicinePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityPlannerVCID" id="EaG-E7-1iX" customClass="ActivityPlannerVC" customModule="MedicinePlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ypt-k6-JMe"/>
                         <viewControllerLayoutGuide type="bottom" id="myp-CX-KVu"/>
@@ -201,7 +219,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="weekSelectorView" destination="e8t-wQ-IMe" id="WYx-0N-cEG"/>
+                        <outlet property="weekSelectorViewPlaceholder" destination="e8t-wQ-IMe" id="qVG-d9-P7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qr1-6S-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>

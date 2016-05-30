@@ -80,27 +80,27 @@ enum ActivityTime: Int {
 
         switch self {
         case .earlyMorning:
-            return 6 ^ .AM ... 8 ^ .AM
+            return 6 ^ .AM -- 8 ^ .AM
         case .morning:
-            return 8 ^ .AM ... 10 ^ .AM
+            return 8 ^ .AM -- 10 ^ .AM
         case .lateMorning:
-            return 10 ^ .AM ... 12 ^ .PM
+            return 10 ^ .AM -- 12 ^ .PM
         case .afternoon:
-            return 12 ^ .PM ... 2 ^ .PM
+            return 12 ^ .PM -- 2 ^ .PM
         case .lateAfternoon:
-            return 2 ^ .PM ... 4 ^ .PM
+            return 2 ^ .PM -- 4 ^ .PM
         case .earlyEvening:
-            return 4 ^ .PM ... 6 ^ .PM
+            return 4 ^ .PM -- 6 ^ .PM
         case .evening:
-            return 6 ^ .PM ... 8 ^ .PM
+            return 6 ^ .PM -- 8 ^ .PM
         case .night:
-            return 8 ^ .PM ... 10 ^ .PM
+            return 8 ^ .PM -- 10 ^ .PM
         case .latenight:
-            return 10 ^ .PM ... 12 ^ .AM
+            return 10 ^ .PM -- 12 ^ .AM
         case .midnight:
-            return 12 ^ .AM ... 2 ^ .AM
+            return 12 ^ .AM -- 2 ^ .AM
         case .afterMidnight:
-            return 2 ^ .AM ... 6 ^ .AM
+            return 2 ^ .AM -- 6 ^ .AM
         }
     }
 
